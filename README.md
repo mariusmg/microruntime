@@ -15,6 +15,6 @@ microruntime
 
 -stream and string utilities.
 
-- a high level wrapper of Log4Net functionality and SmtpClient appender with TLS authentication support (be aware that the Log4Net library is not included so please grab it from here23)
+-a high level wrapper of Log4Net functionality and SmtpClient appender with TLS authentication support (be aware that the Log4Net library is not included so please grab it from here23)
 
 -EntityFramework helper methods.
