@@ -82,6 +82,7 @@
     <Compile Include="IOperation.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Log4NetAppender\SmtpClientSmtpAppender.cs" />
+    <Compile Include="MultidimensionalArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EntityFramework\QueryRunner.cs" />
     <Compile Include="Range.cs" />

@@ -1,34 +1,29 @@
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using voidsoft.MicroRuntime;
 
 namespace Tests
 {
-    [TestFixture]
-    public class StringUtilitiesTests
-    {
-        [Test]
-        public void IsInteger()
-        {
-            Assert.IsTrue(StringUtilities.IsInteger("1"));
-        }
+	[TestClass]
+	public class StringUtilitiesTests
+	{
+		[TestMethod]
+		public void IsInteger()
+		{
+			Assert.IsTrue(StringUtilities.IsInteger("1"));
+		}
 
+		[TestMethod]
+		public void IsIntegerWithString()
+		{
+			bool res = StringUtilities.IsInteger("sdfdsfds");
+			Assert.IsTrue(res == false);
+		}
 
-        [Test]
-        public void IsIntegerWithString()
-        {
-            bool res = StringUtilities.IsInteger("sdfdsfds");
-            Assert.IsTrue(res == false);
-        }
-
-
-        [Test]
-        public void IsNegativeNumber()
-        {
-            string s = "-45645645456";
-            Assert.IsTrue(StringUtilities.IsNegativeNumber(s));
-        }
-        
-        
-        
-    }
+		[TestMethod]
+		public void IsNegativeNumber()
+		{
+			string s = "-45645645456";
+			Assert.IsTrue(StringUtilities.IsNegativeNumber(s));
+		}
+	}
 }
