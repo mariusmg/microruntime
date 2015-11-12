@@ -2,27 +2,14 @@
 
 namespace voidsoft.MicroRuntime
 {
-	/// <summary>
-	///     Utilities for manipulating multidimensional arrays
-	/// </summary>
 	public class MultidimensionalArray
 	{
-		/// <summary>
-		///     Gets the values on diagonal from a multimensional array.
-		/// </summary>
-		/// <param name="a"></param>
-		/// <returns></returns>
 		public object[] GetDiagonalValues(Array a)
 		{
 			int length = VerifyArrayAndGetLength(a);
 			return GetArrayValues(a, length, true);
 		}
 
-		/// <summary>
-		///     Gets the values from reversed diagonal form a multidimensional array
-		/// </summary>
-		/// <param name="a"></param>
-		/// <returns></returns>
 		public object[] GetReverseDiagonalValues(Array a)
 		{
 			int length = VerifyArrayAndGetLength(a);

@@ -9,13 +9,13 @@ namespace Tests
 		[TestMethod]
 		public void IsInteger()
 		{
-			Assert.IsTrue(StringUtilities.IsInteger("1"));
+			Assert.IsTrue((new StringUtilities()).IsInteger("1"));
 		}
 
 		[TestMethod]
 		public void IsIntegerWithString()
 		{
-			bool res = StringUtilities.IsInteger("sdfdsfds");
+			bool res = (new StringUtilities()).IsInteger("sdfdsfds");
 			Assert.IsTrue(res == false);
 		}
 
@@ -23,7 +23,7 @@ namespace Tests
 		public void IsNegativeNumber()
 		{
 			string s = "-45645645456";
-			Assert.IsTrue(StringUtilities.IsNegativeNumber(s));
+			Assert.IsTrue((new StringUtilities()).IsNegativeNumber(s));
 		}
 	}
 }

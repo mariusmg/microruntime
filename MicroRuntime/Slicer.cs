@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-
+using System.Linq;
 
 namespace voidsoft.MicroRuntime
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class Slicer
     {
         /// <summary>
@@ -72,15 +69,9 @@ namespace voidsoft.MicroRuntime
 
 
             //get count
-            int counter = -1;
+            int counter = m.Cast<T>().Count();
 
-            foreach (T temp in m)
-            {
-                ++counter;
-            }
-
-
-            if (pageIndex == 1)
+	        if (pageIndex == 1)
             {
                 startIndex = 0;
                 endIndex = count;

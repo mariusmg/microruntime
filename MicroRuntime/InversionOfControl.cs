@@ -5,9 +5,6 @@ using System.Reflection;
 
 namespace voidsoft.MicroRuntime
 {
-    /// <summary>
-    /// 
-    /// </summary>
     public class InversionOfControl
     {
         //  private const char VALUE_SPLITTER = ';';

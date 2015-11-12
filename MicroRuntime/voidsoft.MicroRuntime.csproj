@@ -54,10 +54,6 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\references\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -76,15 +72,10 @@
     <Compile Include="DateRange.cs" />
     <Compile Include="DateTimeUtilities.cs" />
     <Compile Include="Delegates.cs" />
-    <Compile Include="EntityFramework\EntityFrameworkExtender.cs" />
-    <Compile Include="EntityFramework\EntityTypeData.cs" />
     <Compile Include="InversionOfControl.cs" />
     <Compile Include="IOperation.cs" />
-    <Compile Include="Log.cs" />
-    <Compile Include="Log4NetAppender\SmtpClientSmtpAppender.cs" />
     <Compile Include="MultidimensionalArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EntityFramework\QueryRunner.cs" />
     <Compile Include="Range.cs" />
     <Compile Include="RuntimeCache.cs" />
     <Compile Include="Serialization.cs" />
