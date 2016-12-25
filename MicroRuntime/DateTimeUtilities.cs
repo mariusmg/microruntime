@@ -1,6 +1,6 @@
 using System;
 
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
 	/// <summary>
 	/// DateTime utilities

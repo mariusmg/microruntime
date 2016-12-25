@@ -1,7 +1,7 @@
 using System.IO;
 using System.Text;
 
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
 	public class StreamUtilities
 	{

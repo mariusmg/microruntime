@@ -1,4 +1,4 @@
-﻿namespace voidsoft.MicroRuntime
+﻿namespace Microruntime
 {
     public static class Constants
     {

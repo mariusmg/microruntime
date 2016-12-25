@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Caching;
 
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
     public static class RuntimeCache
     {

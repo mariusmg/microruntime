@@ -1,5 +1,5 @@
 ﻿using System;
-using voidsoft.MicroRuntime;
+using Microruntime;
 using Xunit;
 
 namespace Tests

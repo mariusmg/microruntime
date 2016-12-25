@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
     public class Slicer
     {

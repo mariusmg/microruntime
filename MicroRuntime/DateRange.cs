@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
 	public class DateRange : Range<DateTime>
 	{

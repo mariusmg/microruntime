@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
 	public class MultidimensionalArray
 	{

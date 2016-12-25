@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
 	public class StringUtilities
 	{
