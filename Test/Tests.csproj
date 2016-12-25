@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTimeUtilities.cs" />
+    <Compile Include="MaybeTest.cs" />
     <Compile Include="MultidimensionalArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -105,7 +106,7 @@
     <Compile Include="RangeTests.cs" />
     <Compile Include="SerializationTest.cs" />
     <Compile Include="StringUtilitiesTests.cs" />
-    <Compile Include="TestDateRange.cs" />
+    <Compile Include="DateRangeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MicroRuntime\Microruntime.csproj">
