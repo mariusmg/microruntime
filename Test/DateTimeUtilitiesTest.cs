@@ -7,7 +7,17 @@ namespace Tests
 
 	public class DateTimeUtilitiesTest
 	{
+		[Fact]
+		public void IsToday()
+		{
+			Assert.True(new DateTimeUtilities().IsToday(DateTime.Now));
+		}
 
+		[Fact]
+		public void IsTodayInvalid()
+		{
+			Assert.False(new DateTimeUtilities().IsToday(DateTime.Now.AddDays(2)));
+		}
 
 		[Fact]
 		public void IsLaterFalse()

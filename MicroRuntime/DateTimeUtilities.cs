@@ -8,6 +8,20 @@ namespace Microruntime
 	public class DateTimeUtilities
 	{
 
+		public bool IsToday(DateTime d)
+		{
+			DateTime now = DateTime.Now;
+
+			if (d.Date.Day == now.Day && d.Date.Month == now.Month && d.Date.Year == now.Year)
+			{
+				return true;
+			}
+
+			return false;
+		}
+
+
+
 		public bool IsLaterComparedWithNow(DateTime date)
 		{
 			int compare = DateTime.Compare(DateTime.Now, date);
