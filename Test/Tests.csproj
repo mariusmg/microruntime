@@ -106,7 +106,7 @@
     <Compile Include="RangeTests.cs" />
     <Compile Include="SerializationTest.cs" />
     <Compile Include="StreamUtilitiesTest.cs" />
-    <Compile Include="StringUtilitiesTests.cs" />
+    <Compile Include="StringUtilitiesTest.cs" />
     <Compile Include="DateRangeTest.cs" />
   </ItemGroup>
   <ItemGroup>

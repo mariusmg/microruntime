@@ -6,6 +6,11 @@ namespace Microruntime
 {
 	public class StringUtilities
 	{
+		public bool IsSameString(string a, string b)
+		{
+			return string.Compare(a, b, StringComparison.Ordinal) == 0;
+		}
+
 		public bool IsInteger(string input)
 		{
 			if (input.Length == 0)
