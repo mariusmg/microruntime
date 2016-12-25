@@ -104,7 +104,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="RangeTests.cs" />
-    <Compile Include="SerializationTest.cs" />
     <Compile Include="StreamUtilitiesTest.cs" />
     <Compile Include="StringUtilitiesTest.cs" />
     <Compile Include="DateRangeTest.cs" />

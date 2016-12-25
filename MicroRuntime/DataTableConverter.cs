@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Microruntime
 {
-    public class Converter
+    public class DataTableConverter
     {
         /// <summary>
         /// Converts to data table.
