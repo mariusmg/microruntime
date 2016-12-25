@@ -1,14 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using voidsoft.MicroRuntime;
+﻿using voidsoft.MicroRuntime;
+using Xunit;
 
 namespace Tests
 {
 
-	[TestClass]
 	public class MultidimensionalArrayTests
 	{
 		
-		[TestMethod]
+		[Fact]
 		public void GetDiagonal()
 		{
 			int[,] f = new int[5,5];
@@ -25,17 +24,17 @@ namespace Tests
 
 			object[] diagonalValues = (new MultidimensionalArray()).GetDiagonalValues(f);
 
-			Assert.IsTrue(diagonalValues.Length == expectedResult.Length);
+			Assert.True(diagonalValues.Length == expectedResult.Length);
 
 			for (int i = 0; i < expectedResult.Length; i++)
 			{
-				Assert.IsTrue(expectedResult[i] == (int)diagonalValues[i]);
+				Assert.True(expectedResult[i] == (int)diagonalValues[i]);
 			}
 		}
 
 
 
-		[TestMethod]
+		[Fact]
 		public void GetReverseDiagonal()
 		{
 			int[,] f = new int[5, 5];
@@ -52,11 +51,11 @@ namespace Tests
 
 			object[] diagonalValues = (new MultidimensionalArray()).GetReverseDiagonalValues(f);
 
-			Assert.IsTrue(diagonalValues.Length == expectedResult.Length);
+			Assert.True(diagonalValues.Length == expectedResult.Length);
 
 			for (int i = 0; i < expectedResult.Length; i++)
 			{
-				Assert.IsTrue(expectedResult[i] == (int)diagonalValues[i]);
+				Assert.True(expectedResult[i] == (int)diagonalValues[i]);
 			}
 		}
 	}

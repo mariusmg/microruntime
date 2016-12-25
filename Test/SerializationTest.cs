@@ -1,5 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using voidsoft.MicroRuntime;
+using Xunit;
 
 namespace Tests
 {
@@ -12,10 +12,9 @@ namespace Tests
 		public string c;
 	}
 
-	[TestClass]
 	public class SerializationTest
 	{
-		[TestMethod]
+		[Fact]
 		public void SerializeToText()
 		{
 			ATest test = new ATest();
@@ -26,10 +25,10 @@ namespace Tests
 			Serialization serialization = new Serialization();
 			string ggg = serialization.SerializeToText(test);
 
-			Assert.IsTrue(ggg != null);
+			Assert.True(ggg != null);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void DeserializeFromText()
 		{
 			Serialization serialization = new Serialization();

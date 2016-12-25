@@ -1,49 +1,47 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using voidsoft.MicroRuntime;
+using Xunit;
 
 namespace Tests
 {
-	[TestClass]
 	public class RangeTests
 	{
 		private Range<int> end;
 		private Range<int> start;
 
-		[TestInitialize]
-		public void SetUp()
+		public RangeTests()
 		{
 			start = new Range<int>(3, 5);
 			end = new Range<int>(7, 9);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void IsBigger()
 		{
-			Assert.IsTrue(end > start);
+			Assert.True(end > start);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void IsSmaller()
 		{
-			Assert.IsTrue(end > start);
+			Assert.True(end > start);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void IsInRange()
 		{
-			Assert.IsTrue(start.IsInRange(5));
+			Assert.True(start.IsInRange(5));
 		}
 
-		[TestMethod]
+		[Fact]
 		public void IsDifferent()
 		{
-			Assert.IsTrue(start != end);
+			Assert.True(start != end);
 		}
 
-		[TestMethod]
+		[Fact]
 		public void IsTheSame()
 		{
-			Assert.IsTrue(start == new Range<int>(3, 5));
+			Assert.True(start == new Range<int>(3, 5));
 		}
 	}
 }
