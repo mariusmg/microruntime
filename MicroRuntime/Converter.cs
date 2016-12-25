@@ -1,23 +1,20 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-
 
 namespace Microruntime
 {
-    public static class Convertor
+    public class Converter
     {
         /// <summary>
         /// Converts to data table.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="enm">Enumerable.</param>
+        /// <param name="enumerable">Enumerable.</param>
         /// <returns></returns>
-        [MethodImpl(MethodImplOptions.Synchronized)]
-        public static DataTable ConvertToDataTable<T>(IEnumerable<T> enm)
+        public DataTable ConvertToDataTable<T>(IEnumerable<T> enumerable)
         {
-            IEnumerator<T> ienum = enm.GetEnumerator();
+            IEnumerator<T> ienum = enumerable.GetEnumerator();
 
             DataTable table = new DataTable();
 

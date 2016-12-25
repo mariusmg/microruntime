@@ -68,12 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Convertor.cs" />
+    <Compile Include="Converter.cs" />
     <Compile Include="DateRange.cs" />
     <Compile Include="DateTimeUtilities.cs" />
-    <Compile Include="Delegates.cs" />
     <Compile Include="InversionOfControl.cs" />
-    <Compile Include="IOperation.cs" />
     <Compile Include="MultidimensionalArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
