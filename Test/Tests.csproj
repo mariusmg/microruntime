@@ -79,7 +79,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTimeUtilities.cs" />
+    <Compile Include="DateTimeUtilitiesTest.cs" />
     <Compile Include="MaybeTest.cs" />
     <Compile Include="MultidimensionalArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="RangeTests.cs" />
     <Compile Include="SerializationTest.cs" />
+    <Compile Include="StreamUtilitiesTest.cs" />
     <Compile Include="StringUtilitiesTests.cs" />
     <Compile Include="DateRangeTest.cs" />
   </ItemGroup>

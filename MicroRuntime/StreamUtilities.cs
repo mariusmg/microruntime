@@ -5,10 +5,18 @@ namespace Microruntime
 {
 	public class StreamUtilities
 	{
-		public Stream ConvertToStream(string text, Encoding ec)
+		public Stream ToStream(string text, Encoding ec)
 		{
-			byte[] bts = ec.GetBytes(text);
-			MemoryStream ms = new MemoryStream(bts);
+			byte[] buffer = ec.GetBytes(text);
+			MemoryStream ms = new MemoryStream(buffer);
+			ms.Position = 0;
+			return ms;
+		}
+
+		public Stream ToStream(byte[] buffer)
+		{
+			MemoryStream ms = new MemoryStream(buffer);
+			ms.Position = 0;
 			return ms;
 		}
 	}

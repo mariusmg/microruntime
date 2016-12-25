@@ -5,7 +5,7 @@ using Xunit;
 namespace Tests
 {
 
-	public class DateTimeUtilitiesTests
+	public class DateTimeUtilitiesTest
 	{
 
 

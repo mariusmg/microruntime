@@ -19,25 +19,14 @@ namespace Microruntime
 			hasValue = true;
 		}
 
-		public T Value
+
+		public static Maybe<T> Empty()
 		{
-			get
-			{
-				return t;
-			}
-			set
-			{
-				t = value;
-			}
+			return new Maybe<T>();
 		}
 
-		public bool HasValue
-		{
-			get
-			{
-				return hasValue;
-			}
-		}
+		public T Value => t;
 
+		public bool HasValue => hasValue;
 	}
 }
