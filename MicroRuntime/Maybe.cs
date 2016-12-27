@@ -1,16 +1,12 @@
-﻿using System.CodeDom;
-
-namespace Microruntime
+﻿namespace Microruntime
 {
 	public class Maybe<T>
 	{
-
-		private T t = default(T);
-		private bool hasValue = false;
+		private T t;
+		private bool hasValue;
 
 		public Maybe()
 		{
-
 		}
 
 		public Maybe(T t)
@@ -18,7 +14,6 @@ namespace Microruntime
 			this.t = t;
 			hasValue = true;
 		}
-
 
 		public static Maybe<T> Empty()
 		{

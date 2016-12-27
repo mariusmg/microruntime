@@ -70,7 +70,6 @@
     <Compile Include="DataTableConverter.cs" />
     <Compile Include="DateRange.cs" />
     <Compile Include="DateTimeUtilities.cs" />
-    <Compile Include="InversionOfControl.cs" />
     <Compile Include="Maybe.cs" />
     <Compile Include="MultidimensionalArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

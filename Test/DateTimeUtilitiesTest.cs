@@ -22,14 +22,14 @@ namespace Tests
 		[Fact]
 		public void IsLaterFalse()
 		{
-			Assert.False((new DateTimeUtilities()).IsLaterComparedWithNow(new DateTime(1990, 1, 1)));
+			Assert.False((new DateTimeUtilities()).IsLaterThanNow(new DateTime(1990, 1, 1)));
 		}
 
 
 		[Fact]
 		public void IsLaterCorrect()
 		{
-			Assert.True((new DateTimeUtilities()).IsLaterComparedWithNow(new DateTime(2200, 1, 1)));
+			Assert.True((new DateTimeUtilities()).IsLaterThanNow(new DateTime(2200, 1, 1)));
 		}
 
 	}

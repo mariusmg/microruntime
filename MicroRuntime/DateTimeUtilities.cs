@@ -7,6 +7,15 @@ namespace Microruntime
 	/// </summary>
 	public class DateTimeUtilities
 	{
+		public bool IsSameDay(DateTime first, DateTime second)
+		{
+			if (first.Day == second.Day && first.Month == second.Month && first.Year == second.Year)
+			{
+				return true;
+			}
+
+			return false;
+		}
 
 		public bool IsToday(DateTime d)
 		{
@@ -20,12 +29,28 @@ namespace Microruntime
 			return false;
 		}
 
-
-
-		public bool IsLaterComparedWithNow(DateTime date)
+		public bool IsNowPastThisDay(DateTime day)
 		{
-			int compare = DateTime.Compare(DateTime.Now, date);
-			return compare < 0;
+			if (DateTime.UtcNow.CompareTo(day) > 0)
+			{
+				return true;
+			}
+
+			return false;
+		}
+
+
+
+
+		public bool IsLaterThanNow(DateTime date)
+		{
+			if (DateTime.UtcNow.CompareTo(date) < 0)
+			{
+				return true;
+			}
+
+			return false;
+
 		}
 
 		/// <summary>
@@ -48,7 +73,7 @@ namespace Microruntime
 		/// </returns>
 		public bool IsLeapYear(int year)
 		{
-			return (year%4 == 0 && (year%100 != 0 || year%400 == 0));
+			return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 		}
 
 		/// <summary>
@@ -61,7 +86,7 @@ namespace Microruntime
 		/// <remarks>Properly handles February with regard to leap years. All dates must be valid.</remarks>
 		public bool IsLastDayOfMonth(int month, int day, int year)
 		{
-			int[] lastDay = new int[12] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+			int[] lastDay = new int[12] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 			if (2 == month)
 			{
