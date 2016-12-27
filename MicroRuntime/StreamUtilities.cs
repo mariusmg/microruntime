@@ -1,5 +1,6 @@
 using System.IO;
 using System.Text;
+using System.Web;
 
 namespace Microruntime
 {
@@ -20,7 +21,19 @@ namespace Microruntime
 			return ms;
 		}
 
+		public byte[] GetBytesFromHttpFileBase(HttpPostedFileBase file)
+		{
+			Stream stream = file.InputStream;
+			return ToBytes(stream);
+		}
 
-
+		public byte[] ToBytes(Stream stream)
+		{
+			using (MemoryStream ms = new MemoryStream())
+			{
+				stream.CopyTo(ms);
+				return ms.ToArray();
+			}
+		}
 	}
 }
