@@ -51,12 +51,7 @@ namespace Microruntime
 
 		public bool IsMultiLine(string value)
 		{
-			return (value.IndexOf(Environment.NewLine) > -1 ? true : false);
-		}
-
-		public string MakeSingleLine(string value)
-		{
-			return value.Replace(Environment.NewLine, " ");
+			return value.IndexOf(Environment.NewLine) > -1;
 		}
 
 		public bool Contains(string value, string[] args)
