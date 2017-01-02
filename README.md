@@ -14,8 +14,6 @@ Contains :
 - a simple option type for C# ( inspired from F#)
 
 
-Download :
+Install from nuget :
 
-Grab it directly from nuget
-
-##Install-Package Microruntime
+##Install-Package MicroRuntime
