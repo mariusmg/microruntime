@@ -3,15 +3,19 @@ Microruntime is a general purpose utility for .NET
 
 Contains :
 
-- simple IoC container.
+- simple IoC container (TypeInstance)
 
 - ranges
 
 - DateTime utilities 
 
-- serialization utilities (wrappers for XML serialization and a custom build key-value serializer).
-
-- data slicing class for pagination
-
 - stream and string utilities.
 
+- a simple option type for C# ( inspired from F#)
+
+
+Download :
+
+Grab it directly from nuget
+
+##Install-Package Microruntime
