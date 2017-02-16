@@ -5,13 +5,6 @@ namespace Tests
 {
 	public class MaybeTest
 	{
-		[Fact]
-		public void ValueTypeInvalid()
-		{
-			Maybe<int>  m = new Maybe<int>();
-			Assert.False(m.HasValue);
-		}
-
 
 
 		[Fact]

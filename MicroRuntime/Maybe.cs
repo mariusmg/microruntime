@@ -1,6 +1,6 @@
 ﻿namespace Microruntime
 {
-	public class Maybe<T>
+	public class Maybe<T> where T : class
 	{
 		private T t;
 		private bool hasValue;
@@ -12,7 +12,7 @@
 		public Maybe(T t)
 		{
 			this.t = t;
-			hasValue = true;
+			hasValue = t != null;
 		}
 
 		public static Maybe<T> Empty()
