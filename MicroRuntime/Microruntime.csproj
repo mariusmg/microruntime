@@ -76,6 +76,7 @@
     <Compile Include="Range.cs" />
     <Compile Include="StreamUtilities.cs" />
     <Compile Include="StringUtilities.cs" />
+    <Compile Include="TypeDescriptor.cs" />
     <Compile Include="TypeInstance.cs" />
   </ItemGroup>
   <ItemGroup>

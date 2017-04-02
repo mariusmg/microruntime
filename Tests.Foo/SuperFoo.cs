@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tests.Foo
 {
-	public class SuperFoo : IFoo
+	public class SuperFoo : MarshalByRefObject, IFoo
 	{
 		public void DoTheFoo()
 		{
