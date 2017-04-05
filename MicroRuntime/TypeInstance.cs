@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using System.Reflection;
-using System.Security.Policy;
 
 namespace Microruntime
 {
@@ -26,7 +25,7 @@ namespace Microruntime
 			}
 			else
 			{
-				string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+				string path = GetBasePathForAssembly();
 				path += @"\" + typeDescriptor.AssemblyName;
 
 				assembly = Assembly.LoadFrom(path);
@@ -37,36 +36,16 @@ namespace Microruntime
 			return (T)Activator.CreateInstance(tp);
 		}
 
+		public static string GetBasePathForAssembly()
+		{
+			if (System.Web.HttpContext.Current == null)
+			{
+				return AppDomain.CurrentDomain.BaseDirectory;
+			}
 
-		//public T CreateInstanceInAppDomain<T>(string descriptor) where T : class
-		//{
-		//	TypeDescriptor typeDescriptor = ParseDescriptor<T>(descriptor);
-
-		//	AppDomainSetup domaininfo = new AppDomainSetup();
-		//	domaininfo.ApplicationBase = System.Environment.CurrentDirectory;
-		//	Evidence evidence = AppDomain.CurrentDomain.Evidence;
-		//	AppDomain appDomain = AppDomain.CreateDomain(descriptor, evidence, domaininfo);
-
-		//	Assembly assembly;
-
-		//	if (File.Exists(typeDescriptor.AssemblyName))
-		//	{
-		//		assembly = appDomain.Load(typeDescriptor.AssemblyName);
-		//	}
-		//	else
-		//	{
-		//		string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-		//		path += @"\" + typeDescriptor.AssemblyName;
-
-		//		assembly = appDomain.Load(path);
-		//	}
-
-		//	Type tp = assembly.GetType(typeDescriptor.ClassName, false);
-
-		//	return (T)Activator.CreateInstance(tp); ;
-		//}
-
-
+			return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin");
+		}
+		
 		private TypeDescriptor ParseDescriptor<T>(string descriptor) where T : class
 		{
 			string[] vars = descriptor.Split(new[] { VALUE_SPLITTER }, StringSplitOptions.RemoveEmptyEntries);

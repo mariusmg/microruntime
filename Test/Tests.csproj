@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTimeUtilitiesTest.cs" />
+    <Compile Include="DiscriminatedResultTest.cs" />
     <Compile Include="IFoo.cs" />
     <Compile Include="MaybeTest.cs" />
     <Compile Include="MultidimensionalArrayTests.cs" />

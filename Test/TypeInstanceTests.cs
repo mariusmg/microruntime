@@ -12,14 +12,5 @@ namespace Tests
 			Assert.True(f != null);
 			f.DoTheFoo();
 		}
-
-
-		//[Fact]
-		//public void CreateInstanceAppDomain()
-		//{
-		//	IFoo f = new TypeInstance().CreateInstanceInAppDomain<IFoo>("Tests.Foo.SuperFoo,Tests.Foo.dll");
-		//	Assert.True(f != null);
-		//	f.DoTheFoo();
-		//}
 	}
 }
