@@ -31,7 +31,12 @@ namespace Microruntime
 				assembly = Assembly.LoadFrom(path);
 			}
 
-			Type tp = assembly.GetType(typeDescriptor.ClassName, false);
+			Type tp = assembly.GetType(typeDescriptor.ClassName, false, true);
+
+			if (tp == null)
+			{
+				throw new ArgumentException($"GetType failed for {typeDescriptor.ClassName}");
+			}
 
 			return (T)Activator.CreateInstance(tp);
 		}
@@ -45,7 +50,7 @@ namespace Microruntime
 
 			return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "bin");
 		}
-		
+
 		private TypeDescriptor ParseDescriptor<T>(string descriptor) where T : class
 		{
 			string[] vars = descriptor.Split(new[] { VALUE_SPLITTER }, StringSplitOptions.RemoveEmptyEntries);
@@ -60,10 +65,14 @@ namespace Microruntime
 			}
 			else
 			{
-				throw new ArgumentException("The descriptor in invalid");
+				throw new ArgumentException($"The descriptor {descriptor} in invalid");
 			}
 
-			return new TypeDescriptor() { AssemblyName = assemblyName, ClassName = className };
+			return new TypeDescriptor()
+			{
+				AssemblyName = assemblyName.Trim(),
+				ClassName = className.Trim()
+			};
 		}
 
 
