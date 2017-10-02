@@ -14,5 +14,9 @@ namespace Tests.Foo
 			Debug.WriteLine("SuperFoo");
 			Trace.WriteLine("SuperFoo");
 		}
+
+
+
+
 	}
 }

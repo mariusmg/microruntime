@@ -13,7 +13,7 @@ namespace Microruntime
 		private const int ASSEMBLY_NAME_INDEX = 1;
 
 
-		public T CreateInstance<T>(string descriptor) where T : class
+		public T CreateInstance<T>(string descriptor,params object[] args) where T : class
 		{
 			TypeDescriptor typeDescriptor = ParseDescriptor<T>(descriptor);
 
@@ -36,6 +36,11 @@ namespace Microruntime
 			if (tp == null)
 			{
 				throw new ArgumentException($"GetType failed for {typeDescriptor.ClassName}");
+			}
+
+			if (args?.Length > 0)
+			{
+				return (T)Activator.CreateInstance(tp, args);
 			}
 
 			return (T)Activator.CreateInstance(tp);

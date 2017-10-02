@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>voidsoft.MicroRuntime</RootNamespace>
-    <AssemblyName>voidsoft.MicroRuntime</AssemblyName>
+    <AssemblyName>Microruntime</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

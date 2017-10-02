@@ -78,6 +78,7 @@
     <Compile Include="DateTimeUtilitiesTest.cs" />
     <Compile Include="DiscriminatedResultTest.cs" />
     <Compile Include="IFoo.cs" />
+    <Compile Include="ITestParameter.cs" />
     <Compile Include="MaybeTest.cs" />
     <Compile Include="MultidimensionalArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
