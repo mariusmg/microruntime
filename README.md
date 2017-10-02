@@ -1,19 +1,35 @@
-Microruntime is a general purpose utility for .NET
+Microruntime 
 ============
 
-Contains :
+Microruntime is a general purpose utility for .NET (v4 and higher)
 
-- simple IoC container (TypeInstance)
+It contains :
+
+- a simple Inversion of Control container (TypeInstance)
 
 - ranges
 
-- DateTime utilities 
-
-- stream and string utilities.
+- DateTime, string and streams utilities 
 
 - a simple option type for C# ( inspired from F#)
 
+   This allows you, to write non nullable reference types, something like this :
 
-Install from nuget :
+   `Maybe<ReferenceInstance>  result = GetResult();`
 
-##Install-Package MicroRuntime
+   `if(result.HasValue)`
+   `{`
+   
+   `result.DoStuffWithIt();`
+   
+   `}`
+
+
+- a discriminated union implementation (again, inspired from F#)
+
+
+Use it :
+
+To use it, just install the library directly from nuget :
+
+## Install-Package Microruntime
