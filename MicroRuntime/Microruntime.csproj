@@ -8,7 +8,7 @@
     <ProjectGuid>{C08C338D-73C1-414B-8787-4CBED3D375DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>voidsoft.MicroRuntime</RootNamespace>
+    <RootNamespace>Microruntime</RootNamespace>
     <AssemblyName>Microruntime</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -70,6 +70,7 @@
     <Compile Include="DataTableConverter.cs" />
     <Compile Include="DateRange.cs" />
     <Compile Include="DateTimeUtilities.cs" />
+    <Compile Include="Functional.cs" />
     <Compile Include="Maybe.cs" />
     <Compile Include="MultidimensionalArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

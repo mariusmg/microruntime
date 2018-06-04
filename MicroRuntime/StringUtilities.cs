@@ -6,9 +6,14 @@ namespace Microruntime
 {
 	public class StringUtilities
 	{
-		public bool IsSameString(string a, string b)
+		public bool IsSameString(string a, string b, bool caseSensitiveComparation = true)
 		{
-			return string.Compare(a, b, StringComparison.Ordinal) == 0;
+			if (caseSensitiveComparation)
+			{
+				return string.Compare(a, b, StringComparison.Ordinal) == 0;
+			}
+
+			return string.Compare(a, b, StringComparison.OrdinalIgnoreCase) == 0;
 		}
 
 		public bool IsInteger(string input)

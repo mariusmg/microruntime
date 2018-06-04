@@ -16,6 +16,24 @@ namespace Tests
 		}
 
 		[Fact]
+		public void IsSameStringIgnoreCaseSensitive()
+		{
+			string s = "test";
+			string d = "TEST";
+
+			Assert.True(new StringUtilities().IsSameString(s, d, false));
+		}
+
+		[Fact]
+		public void IsSameStringCaseSensitive()
+		{
+			string s = "test";
+			string d = "TEST";
+
+			Assert.False(new StringUtilities().IsSameString(s, d, true));
+		}
+
+		[Fact]
 		public void IsInteger()
 		{
 			Assert.True(new StringUtilities().IsInteger("1"));

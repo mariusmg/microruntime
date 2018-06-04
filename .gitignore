@@ -3,7 +3,9 @@
 [Oo]bj/
 .vs
 
-
+.vs
+*.nupkg
+ 
 Microruntime.nupkg
 
 # mstest test results
