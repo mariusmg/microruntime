@@ -83,6 +83,7 @@
     <Compile Include="MaybeTest.cs" />
     <Compile Include="MultidimensionalArrayTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetriesTest.cs" />
     <Compile Include="TypeInstanceTests.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
