@@ -67,20 +67,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTableConverter.cs" />
-    <Compile Include="DateRange.cs" />
-    <Compile Include="DateTimeUtilities.cs" />
-    <Compile Include="Functional.cs" />
-    <Compile Include="Maybe.cs" />
-    <Compile Include="MultidimensionalArray.cs" />
+    <Compile Include="MicroRuntime\DataTableConverter.cs" />
+    <Compile Include="MicroRuntime\DateRange.cs" />
+    <Compile Include="MicroRuntime\DateTimeUtilities.cs" />
+    <Compile Include="MicroRuntime\DiscriminatedResult.cs" />
+    <Compile Include="MicroRuntime\Functional.cs" />
+    <Compile Include="MicroRuntime\Maybe.cs" />
+    <Compile Include="MicroRuntime\MultidimensionalArray.cs" />
+    <Compile Include="MicroRuntime\Range.cs" />
+    <Compile Include="MicroRuntime\Retrier.cs" />
+    <Compile Include="MicroRuntime\StreamUtilities.cs" />
+    <Compile Include="MicroRuntime\StringUtilities.cs" />
+    <Compile Include="MicroRuntime\TypeDescriptor.cs" />
+    <Compile Include="MicroRuntime\TypeInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Range.cs" />
-    <Compile Include="Retrier.cs" />
-    <Compile Include="StreamUtilities.cs" />
-    <Compile Include="StringUtilities.cs" />
-    <Compile Include="TypeDescriptor.cs" />
-    <Compile Include="TypeInstance.cs" />
-    <Compile Include="DiscriminatedResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
