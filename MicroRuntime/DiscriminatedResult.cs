@@ -1,5 +1,5 @@
 ﻿
-namespace voidsoft.MicroRuntime
+namespace Microruntime
 {
 
 	enum DoubleValueSet

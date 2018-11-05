@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-using MicroRuntime;
+using Microruntime;
 using Xunit;
 
 namespace Tests

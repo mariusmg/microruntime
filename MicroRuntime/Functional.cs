@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MicroRuntime
+namespace Microruntime
 {
 	public static class Functional
 	{

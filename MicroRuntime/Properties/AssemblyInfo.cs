@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Microruntime")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("voidsoft")]
+[assembly: AssemblyCompany("Marius Gheorghe")]
 [assembly: AssemblyProduct("Microruntime")]
-[assembly: AssemblyCopyright("Copyright © voidsoft 2008-2009")]
+[assembly: AssemblyCopyright("Copyright © Marius Gheorghe")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

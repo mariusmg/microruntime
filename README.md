@@ -1,15 +1,22 @@
 Microruntime 
 ============
 
-Microruntime is a general purpose utility for .NET (v4 and higher)
+Microruntime is a general purpose utility for .NET (v4 and higher) and .NetCore 
 
 It contains :
 
-- a simple Inversion of Control container (TypeInstance)
+- plugin loader (TypeInstance)
 
 - ranges
 
 - DateTime, string and streams utilities 
+
+- some functional utilities for conditional checks
+
+   `CustomType x = ....
+   `RunIfNull<CustomType>(x, ()=>{
+      //do stuffs
+   });
 
 - a simple option type for C# ( inspired from F#)
 
@@ -24,11 +31,12 @@ It contains :
    
    `}`
 
+- discriminated union implementation (again, inspired from F#)
 
-- a discriminated union implementation (again, inspired from F#)
+- helper class to implement circuit breaker pattern with for multiple retries for a operation
 
 
-Use it :
+Install it :
 
 To use it, just install the library directly from nuget :
 
