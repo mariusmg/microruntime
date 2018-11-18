@@ -1,34 +1,39 @@
 using System;
 using System.Threading;
-using System.Threading.Tasks;
 
 
 namespace Microruntime
 {
     public class Retrier
     {
-        
-
-        public V Try<T,V>(Func<T,V> a, T t, int retries = 3, int sleepInterval = 1000)
+        public V Try<T, V>(Func<T, V> a, T t, int retries = 3, int sleepInterval = 1000,
+            bool increaseTimeoutOnEachRetry = false)
         {
-            return ExecuteWithRetry(a,t, retries, sleepInterval);
+            return ExecuteWithRetry(a, t, retries, sleepInterval, increaseTimeoutOnEachRetry);
         }
 
-        
-        public T Try<T>(Func<T> a, int retries = 3, int sleepInterval = 1000)
+
+        public T Try<T>(Func<T> a, int retries = 3, int sleepInterval = 1000, bool increaseTimeoutOnEachRetry = false)
         {
-            return ExecuteWithRetry(a, retries, sleepInterval);
-        }
-       
-        
-        public void Try(Action a, int retries = 3, int sleepInterval = 1000)
-        {
-            ExecuteWithRetry(a, retries, sleepInterval);
+            return ExecuteWithRetry(a, retries, sleepInterval, increaseTimeoutOnEachRetry);
         }
 
-        
-      
-        private T ExecuteWithRetry<T>(Func<T> a, int retries = 3, int sleepInterval = 1000)
+
+        public void Try(Action a, int retries = 3, int sleepInterval = 1000, bool increaseTimeoutOnEachRetry = false)
+        {
+            ExecuteWithRetry(a, retries, sleepInterval, increaseTimeoutOnEachRetry);
+        }
+
+
+        public void Try<T>(Action a, T exception, int retries = 3, int sleepInterval = 1000,
+            bool increaseTimeoutOnEachRetry = false) where T : Exception
+        {
+            ExecuteWithRetry(a, exception, retries, sleepInterval, increaseTimeoutOnEachRetry);
+        }
+
+
+        private T ExecuteWithRetry<T>(Func<T> a, int retries = 3, int sleepInterval = 1000,
+            bool increaseTimeoutOnEachRetry = false)
         {
             for (int i = 0; i < retries; i++)
             {
@@ -38,20 +43,21 @@ namespace Microruntime
                 }
                 catch (Exception)
                 {
-                    if (i + 1  == retries)
+                    if (i + 1 == retries)
                     {
                         throw;
                     }
 
-                    Thread.Sleep(sleepInterval);
+                    Thread.Sleep(GetWaitingTime(i, sleepInterval, increaseTimeoutOnEachRetry));
                 }
             }
 
             return default(T);
         }
-        
 
-        private V ExecuteWithRetry<T,V>(Func<T,V> a,T t, int retries = 3, int sleepInterval = 1000)
+
+        private V ExecuteWithRetry<T, V>(Func<T, V> a, T t, int retries = 3, int sleepInterval = 1000,
+            bool increaseTimeoutOnEachRetry = false)
         {
             for (int i = 0; i < retries; i++)
             {
@@ -61,20 +67,21 @@ namespace Microruntime
                 }
                 catch (Exception)
                 {
-                    if (i + 1  == retries)
+                    if (i + 1 == retries)
                     {
                         throw;
                     }
 
-                    Thread.Sleep(sleepInterval);
+                    Thread.Sleep(GetWaitingTime(i, sleepInterval, increaseTimeoutOnEachRetry));
                 }
             }
 
             return default(V);
         }
 
-        
-        private  void ExecuteWithRetry(Action a, int retries, int sleepInterval)
+
+        private void ExecuteWithRetry<T>(Action a, T t, int retries, int sleepInterval,
+            bool increaseTimeoutOnEachRetry = false) where T : Exception
         {
             for (int i = 0; i < retries; i++)
             {
@@ -84,17 +91,58 @@ namespace Microruntime
                 }
                 catch (Exception ex)
                 {
-                    if (i +1 == retries)
+                    if (ex.GetType() == typeof(T))
+                    {
+                        if (i + 1 == retries)
+                        {
+                            throw;
+                        }
+
+                        Thread.Sleep(GetWaitingTime(i, sleepInterval, increaseTimeoutOnEachRetry));
+                    }
+                    else
                     {
                         throw;
                     }
-
-                    Thread.Sleep(sleepInterval);
                 }
             }
         }
 
 
+        private void ExecuteWithRetry(Action a, int retries, int sleepInterval, bool increaseTimeoutOnEachRetry = false)
+        {
+            for (int i = 0; i < retries; i++)
+            {
+                try
+                {
+                    a();
+                }
+                catch (Exception ex)
+                {
+                    if (i + 1 == retries)
+                    {
+                        throw;
+                    }
 
+                    Thread.Sleep(GetWaitingTime(i, sleepInterval, increaseTimeoutOnEachRetry));
+                }
+            }
+        }
+
+
+        private int GetWaitingTime(int retry, int timeout, bool isIncreasedOnEachRetry)
+        {
+            if (isIncreasedOnEachRetry)
+            {
+                if (retry > 0 && timeout > 0)
+                {
+                    return retry * timeout;
+                }
+
+                return timeout;
+            }
+
+            return timeout;
+        }
     }
 }
